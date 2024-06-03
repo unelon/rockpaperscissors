@@ -33,6 +33,20 @@ const Play = (choice) => {
 
     const result = determineWinner(user, computer);
 
+    let userScore = parseInt(document.querySelector("#userScore h2").innerText);
+    let computerScore = parseInt(document.querySelector("#computerScore h2").innerText);
+
+
+    if (result === "Computer wins!") {
+        document.querySelector("#computerScore h2").innerText=computerScore + 1;
+    }
+
+    if (result === "You win!") {
+        document.querySelector("#userScore h2").innerText=userScore + 1;
+    }
+
+    console.log(userScore, computerScore)
+    
     document.getElementById("resultText").innerText = result
 
     switch (user) {
